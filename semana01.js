@@ -1,8 +1,3 @@
-
-    
-   scrrip <p>Digite um número inteiro positivo e clique no botão para verificar se ele é par ou ímpar:</p>
-    
-    
     
 function solicitarNumero() {
     let numero;
