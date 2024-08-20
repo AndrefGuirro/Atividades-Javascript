@@ -1,26 +1,21 @@
 /* styles.css */
 html, body {
-    height: 150%; /* Garante que o HTML e o body ocupem 100% da altura da janela */
-    margin: 0; /* Remove qualquer margem padrão do body */
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-
-
+.content {
+    flex: 100;
+}
 
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 100px 0;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
