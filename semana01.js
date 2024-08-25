@@ -58,11 +58,27 @@ function calcularFatorial() {
 function verificarTipoDado() {
     let dado = prompt("Digite qualquer valor:");
     let desejaVerificar = confirm("Deseja verificar o tipo do dado informado?");
-
+    
+  
     if (desejaVerificar) {
-        let tipoDado = typeof dado;
-        document.body.innerHTML += `<p>O tipo do dado informado é: ${tipoDado}</p>`;
+        let tipoDado;
+
+        // Tenta converter para número
+        if (!isNaN(dado) && dado.trim() !== "") {
+            // Verifica se é um número inteiro
+            if (Number.isInteger(Number(dado))) {
+                tipoDado = "Number (Inteiro)";
+            } else {
+                tipoDado = "Number (Float)";
+            }
+        } else {
+            tipoDado = typeof dado;
+        }
+
+        // Exibe o tipo do dado no corpo da página
+        document.body.innerHTML += `<p class='mensagem'>O tipo do dado informado é: ${tipoDado}</p>`;
     } else {
-        document.body.innerHTML += "<p>Obrigado por visitar esta página.</p>";
+        // Caso contrário, exibe uma mensagem de agradecimento
+        document.body.innerHTML += "<p class='mensagem'>Até logo.</p>";
     }
 }
