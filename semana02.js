@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dataAtualElement.textContent = formatarData(dataAtual);
 });
 
+// Função Exibir relógio , hora atual
 function atualizarRelogio() {
     const agora = new Date();
 
@@ -39,3 +40,18 @@ function atualizarRelogio() {
 }
 
 atualizarRelogio();
+
+//Função Palíndromo
+function verificarPalindromo() {
+    
+    var texto = document.getElementById("entradaTexto").value;//digitação do texto 
+    var textoSemEspaco = texto.replace(/\s+/g, '');//remove espaços
+    var Positivo = textoSemEspaco === textoSemEspaco.split('').reverse().join('');//verificação
+
+    if (Positivo) {
+        alert('O texto é um palíndromo!\nÉ a mesma palavra escrita de trás para frente');
+    } else {
+        alert('O texto não é um palíndromo.\nA palavra muda o sentido ao ser montada de trás para frente');
+    }
+}
+

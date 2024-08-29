@@ -9,20 +9,34 @@
 
 <body>
 
-    <div class="container mt-5">
-        <h1 class=>Olá, hoje é</h1>
+    <div class="container mt-1">
+        <h1>Semana 02 de atividades</h1><br>
+        <h2 class=>Bem vindo, hoje é:</h2>
 
         <div class="card bg-secondary text-white">
-            <div class="card-body" 
-                id="dataAtual" >
-            </div>
+                <div class="card-body" 
+                    id="dataAtual" >
+                </div>
             
+            <div class="container mt-1">
+                <h1 class="text-center">Horário de Brasília</h1>
+                <p id="relogio" class="text-center" style="font-size: 2em;"></p>
+            </div>
+        </div>
+
         <div class="container mt-5">
-            <h1 class="text-center">Relógio</h1>
-            <p id="relogio" class="text-center" style="font-size: 2em;"></p>
+            <h2 class="text-center">Palíndromo</h2>
+            <p class="text-center">
+                Um palíndromo é uma palavra, frase, número ou qualquer outra sequência de caracteres que pode ser lida da mesma forma de trás para frente
+                 (desconsiderando espaços, pontuação e acentuação). Em outras palavras, a sequência é simétrica.
+            </p>
+            <div class="text-center">
+                <input type="text" id="entradaTexto" class="form-control" placeholder="Digite uma palavra ou frase">
+                <button class="btn btn-primary mt-3" onclick="verificarPalindromo()">Verificar</button>
+            </div>
         </div>
     
-    </div>
+  
 
     <script src="semana02.js"></script>
 
