@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Preenchido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="resultado">
+        <h2>Formulário Preenchido</h2>
+        <p>Seus dados preenchidos são:</p>
+        
+        <ul id="dados_usuario">
+        </ul>
+    </div>
+
+    
+
+
+    <script>
+        function getParametrosURL() {
+            const params = new URLSearchParams(window.location.search);
+
+            const lista = document.getElementById('dados_usuario');
+            lista.innerHTML = `
+                <li><strong>Nome:</strong> ${params.get('nome')}</li>
+                <li><strong>Email:</strong> ${params.get('email')}</li>
+                <li><strong>Data de Nascimento:</strong> ${params.get('data_nascimento')}</li>
+                <li><strong>Telefone Fixo:</strong> ${params.get('telefone_fixo')}</li>
+                <li><strong>Telefone Celular:</strong> ${params.get('telefone_celular')}</li>
+                ${params.get('curso') ? `<li><strong>Curso:</strong> ${params.get('curso')}</li>` : ""}
+                ${params.get('matricula') ? `<li><strong>Matrícula:</strong> ${params.get('matricula')}</li>` : ""}
+                ${params.get('area') ? `<li><strong>Área:</strong> ${params.get('area')}</li>` : ""}
+                ${params.get('lattes') ? `<li><strong>Lattes:</strong> ${params.get('lattes')}</li>` : ""}
+            `;
+        }
+
+        getParametrosURL();
+
+                    
+    </script>
+
+<div class="text-center mt-5"> 
+    <a href="semana04.html" class="btn btn-primary btn-sm">Voltar</a>
+</div>
+
+</body>
+</html>
