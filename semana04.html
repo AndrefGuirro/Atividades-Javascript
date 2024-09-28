@@ -10,7 +10,7 @@
     <div class="container mt-4">
         <h2 class="mb-4">Formulário de Cadastro:</h2>
 
-        <form id="cadastroForm" action="resultados_semana04.html" method="GET" onsubmit="return validarFormulario()">
+        <form id="cadastroForm" action="resultados_semana04.html" method="GET" onsubmit="return formController.validarFormulario()">
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="nome" class="form-label">Nome:</label>
@@ -35,12 +35,12 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="telefone_fixo" class="form-label">Telefone Fixo:</label>
-                    <input type="text" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(xx)xxxx-xxxx" oninput="formatarTelefone(this)">
+                    <input type="text" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(xx)xxxx-xxxx" oninput="formController.formatarTelefone(this)">
                     <div id="telefone_fixo_erro" class="text-danger"></div>
                 </div>
                 <div class="col-md-6">
                     <label for="telefone_celular" class="form-label">Telefone Celular:</label>
-                    <input type="text" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(xx)xxxxx-xxxx" oninput="formatarTelefone(this)">
+                    <input type="text" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(xx)xxxxx-xxxx" oninput="formController.formatarTelefone(this)">
                     <div id="telefone_celular_erro" class="text-danger"></div>
                 </div>
             </div>
@@ -49,11 +49,11 @@
                 <div class="col-md-6">
                     <label class="form-label">Tipo de Usuário:</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="professor" name="tipo_usuario" value="Professor" onclick="alternarCampos()">
+                        <input class="form-check-input" type="radio" id="professor" name="tipo_usuario" value="Professor" onclick="formController.alternarCampos()">
                         <label class="form-check-label" for="professor">Professor</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="aluno" name="tipo_usuario" value="Aluno" onclick="alternarCampos()" checked>
+                        <input class="form-check-input" type="radio" id="aluno" name="tipo_usuario" value="Aluno" onclick="formController.alternarCampos()" checked>
                         <label class="form-check-label" for="aluno">Aluno</label>
                     </div>
                 </div>
