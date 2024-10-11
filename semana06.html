@@ -3,34 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Tarefas - Semana 6</title>
+    <title>Letreiro com React</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Adicionar React e ReactDOM via CDN -->
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+      crossorigin
+    ></script>
     <style>
-        .concluida { text-decoration: line-through; }
-        .pendente { color: green; }
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
     </style>
-</head>
+  </head>
+  <body>
+    <div id="root"></div>
 
-<body>
+    <script type="text/babel">
+      function Letreiro() {
+        const [texto, setTexto] = React.useState('');
+        const mensagem = "Venha estudar na Fatec";
+        const [indice, setIndice] = React.useState(0);
 
-    <div class="container mt-4">
-        <h1>Gerenciador de Tarefas - com React</h1>
-        <!-- O React vai montar o conteúdo aqui -->
-        <div id="root"></div>
-    </div>
+        React.useEffect(() => {
+          if (indice < mensagem.length) {
+            const timer = setTimeout(() => {
+              setTexto((prev) => prev + mensagem[indice]);
+              setIndice(indice + 1);
+            }, 150); // 150 milissegundos entre cada letra
+
+            return () => clearTimeout(timer); // Limpa o timer quando o componente é desmontado ou o índice muda
+          }
+        }, [indice]); // Reexecuta o efeito sempre que o índice mudar
+
+        return (
+          <div>
+            <h1>{texto}</h1>
+          </div>
+        );
+      }
+
+      // Renderiza o componente Letreiro no DOM
+      ReactDOM.render(<Letreiro />, document.getElementById('root'));
+    </script>
     
     <div class="text-center mt-5"> 
-        <a href="index.html" class="btn btn-primary btn-sm">Voltar</a>
+        <a href="index.html" class="btn btn-primary  btn-sm">Voltar</a>
     </div>
 
-    <!-- Adicionar seu script React -->
-    <script type="text/babel" src="semana06.js"></script>
+
 
 </body>
 </html>
